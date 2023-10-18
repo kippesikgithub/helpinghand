@@ -3,7 +3,7 @@ chips:
   - type: template
     icon: mdi:transmission-tower-export
     icon_color: green
-    content: '{{ states("sensor.p1_meter_current_power") }} W'
+    content: '{{ states("sensor.p1_meter_current_power") }} '
     entity: sensor.p1_meter_current_power
     tap_action:
       action: more-info
