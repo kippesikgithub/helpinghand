@@ -1,0 +1,21 @@
+type: custom:mushroom-chips-card
+chips:
+  - type: template
+    icon: mdi:transmission-tower-export
+    icon_color: green
+    content: '{{ states("sensor.p1_meter_current_power") }} W'
+    entity: sensor.p1_meter_current_power
+    tap_action:
+      action: more-info
+alignment: center
+card_mod:
+  style:
+    mushroom-template-chip: |
+      ha-card {
+        --ha-card-box-shadow: none;
+        --chip-background: none;
+        --chip-box-shadow: none;
+        --chip-spacing: 0;
+        --chip-height: 50px;
+        : -36px;
+      } 
