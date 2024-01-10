@@ -1,0 +1,146 @@
+type: grid
+columns: 2
+square: false
+cards:
+  - type: custom:vertical-stack-in-card
+    mode: vertical
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: template
+            entity: sensor.sensor.rookmelder_overloop1_kaku_battery
+            content: '{{ states("sensor.rookmelder_overloop1_kaku_battery") }} %'
+            icon: |2
+                        {% set bl = states('sensor.rookmelder_overloop1_kaku_battery') | int %}
+                        {% if bl < 10 %} mdi:battery-outline
+                        {% elif bl < 20 %} mdi:battery-10
+                        {% elif bl < 30 %} mdi:battery-20
+                        {% elif bl < 40 %} mdi:battery-30
+                        {% elif bl < 50 %} mdi:battery-40
+                        {% elif bl < 60 %} mdi:battery-50
+                        {% elif bl < 70 %} mdi:battery-60
+                        {% elif bl < 80 %} mdi:battery-70
+                        {% elif bl < 90 %} mdi:battery-80
+                        {% elif bl < 100 %} mdi:battery-90
+                        {% elif bl == 100 %} mdi:battery
+                        {% else %} mdi:battery-unknown
+                        {% endif %}
+            icon_color: |2-
+                        {% set bl = states('sensor.rookmelder_overloop1_kaku_battery') | int %}
+                        {% if bl < 10 %} red
+                        {% elif bl < 20 %} red
+                        {% elif bl < 30 %} red
+                        {% elif bl < 40 %} orange
+                        {% elif bl < 50 %} orange
+                        {% elif bl < 60 %} green
+                        {% elif bl < 70 %} green
+                        {% elif bl < 80 %} green
+                        {% elif bl < 90 %} green
+                        {% elif bl < 100 %} green
+                        {% elif bl == 100 %} green
+                        {% else %} grey
+                        {% endif %}
+            tap_action:
+              action: more-info
+        alignment: end
+      - type: custom:vertical-stack-in-card
+        horizontal: true
+        cards:
+          - type: custom:mushroom-template-card
+            entity: binary_sensor.rookmelder_overloop1_kaku_smoke
+            layout: horizontal
+            primary: Overloop1
+            secondary: rookmelder
+            icon: >-
+              {% if is_state('binary_sensor.rookmelder_overloop1_kaku_smoke',
+              'on') %}
+
+              mdi:smoke-detector-variant-alert
+
+              {% else %}
+
+              mdi:smoke-detector-variant-off
+
+              {% endif %}
+            icon_color: >-
+              {% if is_state('binary_sensor.rookmelder_overloop1_kaku_smoke',
+              'on') %}
+
+              red
+
+              {% else %}
+
+              green
+
+              {% endif %}
+  - type: custom:vertical-stack-in-card
+    mode: vertical
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: template
+            entity: sensor.sensor.rookmelder_overloop1_kaku_battery
+            content: '{{ states("sensor.rookmelder_overloop1_kaku_battery") }} %'
+            icon: |2
+                        {% set bl = states('sensor.rookmelder_overloop1_kaku_battery') | int %}
+                        {% if bl < 10 %} mdi:battery-outline
+                        {% elif bl < 20 %} mdi:battery-10
+                        {% elif bl < 30 %} mdi:battery-20
+                        {% elif bl < 40 %} mdi:battery-30
+                        {% elif bl < 50 %} mdi:battery-40
+                        {% elif bl < 60 %} mdi:battery-50
+                        {% elif bl < 70 %} mdi:battery-60
+                        {% elif bl < 80 %} mdi:battery-70
+                        {% elif bl < 90 %} mdi:battery-80
+                        {% elif bl < 100 %} mdi:battery-90
+                        {% elif bl == 100 %} mdi:battery
+                        {% else %} mdi:battery-unknown
+                        {% endif %}
+            icon_color: |2-
+                        {% set bl = states('sensor.rookmelder_overloop1_kaku_battery') | int %}
+                        {% if bl < 10 %} red
+                        {% elif bl < 20 %} red
+                        {% elif bl < 30 %} red
+                        {% elif bl < 40 %} orange
+                        {% elif bl < 50 %} orange
+                        {% elif bl < 60 %} green
+                        {% elif bl < 70 %} green
+                        {% elif bl < 80 %} green
+                        {% elif bl < 90 %} green
+                        {% elif bl < 100 %} green
+                        {% elif bl == 100 %} green
+                        {% else %} grey
+                        {% endif %}
+            tap_action:
+              action: more-info
+        alignment: end
+      - type: custom:vertical-stack-in-card
+        horizontal: true
+        cards:
+          - type: custom:mushroom-template-card
+            entity: binary_sensor.rookmelder_overloop2_kaku_smoke
+            layout: horizontal
+            primary: Overloop2
+            secondary: rookmelder
+            icon: >-
+              {% if is_state('binary_sensor.rookmelder_overloop2_kaku_smoke',
+              'on') %}
+
+              mdi:smoke-detector-variant-alert
+
+              {% else %}
+
+              mdi:smoke-detector-variant-off
+
+              {% endif %}
+            icon_color: >-
+              {% if is_state('binary_sensor.rookmelder_overloop2_kaku_smoke',
+              'on') %}
+
+              red
+
+              {% else %}
+
+              green
+
+              {% endif %}
